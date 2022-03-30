@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const exphb = require('express-handlebars')
 const app = express()
+const port = process.env.PORT || 3333
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,4 +20,4 @@ app.use('/', require(path.join(__dirname, 'routes/blog.js')))
 
 
 //listening @3333
-app.listen(3333, () => { console.log("Server is running @ http://127.0.01:3333") });
+app.listen(port, () => { console.log("Server is running http://localhost:3333") });
